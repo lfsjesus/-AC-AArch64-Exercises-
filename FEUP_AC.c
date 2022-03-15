@@ -1,10 +1,6 @@
 /*
  ============================================================================
- Name        : FEUP_AC.c
- Author      : 
- Version     :
- Copyright   : Your copyright notice
- Description : Hello World in C, Ansi-style
+ SOMA DE TODOS OS ELEMENTOS DE UM ARRAY DE 32bits
  ============================================================================
  */
 #include <stdio.h>
