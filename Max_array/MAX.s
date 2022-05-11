@@ -3,24 +3,21 @@
 .type MAX, "function"
 
 MAX:
-	MOV X2, XZR
+	MOV W2, 0
 
 CICLO:
 	CBZ W1, FIM
-	LDUR X3, [X0]
-	ADD X0, X0, 8
+	LDR W3, [X0], 4
 	SUB W1, W1, 1
-	CMP X3, X2
+	CMP W3, W2
 	B.GT NOVO
 	B CICLO
 
 NOVO:
-	ADD X2, X3, XZR
+	MOV W2, W3
 	B CICLO
 
 
 FIM:
-	MOV X0, X2
+	MOV W0, W2
 	ret
-
-
