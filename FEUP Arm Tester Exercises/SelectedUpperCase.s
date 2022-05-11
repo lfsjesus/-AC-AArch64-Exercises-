@@ -36,7 +36,6 @@ CHANGE:
   ADD X1, X1, #1
   B LOOP2
 
-
 FIM:
   MOV W0, W2
   RET
