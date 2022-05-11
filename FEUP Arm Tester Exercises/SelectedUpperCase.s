@@ -1,8 +1,8 @@
 /*
-Sub-routine that receives two sequences, A and B, and changes to element of seqA
+Sub-routine that receives two sequences, A and B, and changes the element of seqA
 to uppercase if that char exists in seq B. 
 
-The functio nreceives the arguments in this order:
+The function receives the arguments in this order:
   - base address of seqB;
   - base address of seqA.
 
