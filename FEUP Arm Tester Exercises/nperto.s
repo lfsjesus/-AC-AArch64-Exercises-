@@ -30,6 +30,6 @@ COMPARE:
   ADD W5, W5, #1
   B LOOP
 
-FIM:
+END:
   MOV W0, W5
   RET
