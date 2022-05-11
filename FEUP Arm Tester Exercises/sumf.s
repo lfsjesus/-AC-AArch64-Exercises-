@@ -23,7 +23,7 @@ LOOP:
   FMOV D2, X2
   FCMP D2, #0.0
   B.GE ROOT
-  BL funcy  // Calling other sub-routine
+  BL funcy  //Calling other sub-routine
   FADD D1, D1, D0
   B LOOP
 
