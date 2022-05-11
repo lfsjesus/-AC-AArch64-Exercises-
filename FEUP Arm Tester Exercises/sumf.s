@@ -1,9 +1,10 @@
-/*
+
 double sumf(double *seqA, int tamA)
 
 f(x): y(x) if x < 0, else sqrt(5 + x^2)    (y(x) is another sub-routine labeled "funcy")
-
+/*
 this sub-routine returns the summation of all the elements after applying function f.
+
 */
 
 .text
