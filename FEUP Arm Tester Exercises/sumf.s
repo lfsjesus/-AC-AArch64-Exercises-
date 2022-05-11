@@ -1,5 +1,5 @@
 /*
-double sumf(double *seqA, int tamA);
+double sumf(double *seqA, int tamA)
 
 f(x): y(x) if x < 0, else sqrt(5 + x^2)    (y(x) is another sub-routine labeled "funcy")
 
