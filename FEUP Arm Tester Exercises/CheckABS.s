@@ -37,7 +37,7 @@ CHANGE:
         ADD W3, W3, #1
         B LOOP
 
-FIM: 
+END: 
         MOV W0, W3
         RET
         
