@@ -15,7 +15,7 @@ Implement the cipher subroutine using SIMD instructions whenever possible.
 .global cipher
 .type cipher, "function"
 
-cifra:
+cipher:
   MOV W2, 1
   MOV W3, #13
   DUP V1.16B, W3
