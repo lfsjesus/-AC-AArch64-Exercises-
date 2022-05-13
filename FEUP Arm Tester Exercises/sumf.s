@@ -9,32 +9,39 @@ this sub-routine returns the summation of all the elements after applying functi
 
 .text
 .global sumf
-.type sumf, "function"
+.type sumf,%function
 
 sumf:
-  STP X29, X30, [SP, #-16]!
-  MOV X29, SP
-  FSUB D1, 1.0, 1.0
-
-LOOP:
-  CBZ W1, END
-  LDR X2, [X0], #8
-  SUB W1, W1, 1
-  FMOV D2, X2
-  FCMP D2, #0.0
-  B.GE ROOT
-  BL funcy  //Calling other sub-routine
-  FADD D1, D1, D0
-  B LOOP
-
-ROOT:
-  FMUL D2, D2, D2
-  FADD D2, D2, #5.0
-  FSQRT D2, D2 
-  FADD D1, D1, D2
-  B LOOP
-
-END:
-  LDP X29, X30, [SP], #16
-  FMOV D0, D1
-  RET
+  stp x29, x30, [ sp, - 64 ]!
+  mov x29, sp
+  mov W2, 0
+  scvtf D1, W2 
+  scvtf D2, W2 
+  mov W3, 5
+  scvtf D3, W3 
+ciclo:
+  cbz W1, fim
+  ldr D4, [ X0 ] , 8
+  sub w1, w1, 1
+  fcmp D4, D2
+  b.lt callFuncY
+  fmul D4, D4, D4
+  fadd D4, D4, D3
+  fsqrt D4, D4
+  fadd D1, D1, D4
+  b ciclo
+callFuncY:
+  fmov D0, D4
+  stp X0, X1, [ sp, 16 ]
+  stp D1, D2, [ sp, 32 ]
+  str D3, [ sp, 48 ]
+  bl funcy
+  ldp X0, X1, [ sp, 16 ] 
+  ldp D1, D2, [ sp, 32 ]
+  ldr D3, [ sp, 48 ]
+  fadd D1, D1, D0
+  b ciclo
+fim:
+  fmov D0, D1
+  ldp x29, x30, [ sp ] , 64
+  ret
