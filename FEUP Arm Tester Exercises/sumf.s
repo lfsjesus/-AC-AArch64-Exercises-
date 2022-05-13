@@ -9,7 +9,7 @@ this sub-routine returns the summation of all the elements after applying functi
 
 .text
 .global sumf
-.type sumf,%function
+.type sumf, "function"
 
 sumf:
   stp x29, x30, [ sp, - 64 ]!
